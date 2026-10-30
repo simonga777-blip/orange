@@ -54,5 +54,8 @@ def handle_reset(data):
         emit('game_reset', {}, room=room)
 
 
+import eventlet
+eventlet.monkey_patch()
+
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
